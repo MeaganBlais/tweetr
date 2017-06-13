@@ -1,0 +1,22 @@
+/*in index.html we have set the nav id to "nav-bar"*/
+#nav-bar {
+    position: fixed; /* set the nav bar at top */
+    height: 80px;
+    width: 100%;    /* full width */
+    background-color: #00a087;
+    padding: 0 2em;
+}
+
+#nav-bar .logo {
+    float: left;
+    width: 80px;
+    height: 80px;
+}
+
+#nav-bar .header {
+    float: left;
+    margin: 10px;
+    line-height: 60px;  /* task 4 - positioning the nav - image may indicate this should be 80*/
+    font-size: 2em;
+    color: #e8fdff;
+}
