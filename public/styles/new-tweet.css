@@ -6,6 +6,7 @@
     <span class="counter">140</span>
   </form>*/
 
+
 .new-tweet {
   border: 2px gray;
   border-style: solid;
@@ -16,7 +17,14 @@
   position: relative;
 }
 
-textarea {
+.new-tweet h2 {
+  width: 282px;
+  border-bottom-width: 1px;
+  border-bottom-color: black;
+  border-bottom-style: solid;
+}
+
+.new-tweet textarea {
   width: 100%;
   padding: 5px;
   margin: 0 auto;
@@ -27,9 +35,6 @@ textarea {
   font-style: italic;
 }
 
-.new-tweet h2 {
-  width: 282px;
-  border-bottom-width: 1px;
-  border-bottom-color: black;
-  border-bottom-style: solid;
+.over-char-limit {
+  color: #ff0000;
 }
