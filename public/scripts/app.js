@@ -16,7 +16,7 @@
        "handle": "@SirIsaac"
      },
      "content": {
-       "text": "If I have seen further it is by standing on the shoulders of giants"
+       "text": "<script>alert('uh oh!');</script>"
      },
      "created_at": 1461116232227
    },
@@ -67,6 +67,7 @@
   "created_at": 1461116232227
 }
 
+ //add escape() to each element that is not being tested elsewhere
  function createTweetElement(tweetData) {
 
    //take a tweet object and return a tweet article
@@ -74,7 +75,7 @@
       <h1>${tweetData.user.name}</h1>
       <img src = "${tweetData.user.avatars.small}"/>
       <h2>${tweetData.user.handle}</h2>
-      <p>${tweetData.content.text}</p>
+      <p>${escape(tweetData.content.text)}</p>
       <footer>${tweetData.created_at}</footer>
       </article>`
 
@@ -102,3 +103,9 @@ function renderTweets(tweets) {
 }
 renderTweets(data);
 });
+
+function escape(str) {
+  var div = document.createElement('div');
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+}
