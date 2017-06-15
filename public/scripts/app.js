@@ -21,14 +21,20 @@ $(document).ready(function(){
   }
 
   function renderTweets(tweets) {
-    // $('#tweets-container').empty(); //removes all child nodes of the matched elements from DOM
+    console.log('test', 'textarea')
+    // $('#tweets-container').empty();
+    //removes all child nodes of the matched elements from DOM
+    $('#tweets-container').empty();
+    // $('#tweets-container').html(''); //mentor suggestion ... find out if it's a better practice
     // loops through tweets
     for (tweet in tweets) {
       // calls createTweetElement for each tweet
       let tweetData = tweets[tweet];
       let $tweet = createTweetElement(tweetData);
       // takes return value and appends it to the tweets container
-      $('#tweets-container').append($tweet)
+      $('#tweets-container').prepend($tweet)
+      // RESET FORM
+      // let reset = $('textarea:reset')
     }
   }
   //renderTweets(text);
