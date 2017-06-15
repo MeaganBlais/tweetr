@@ -4,7 +4,7 @@
 * Reminder: Use (and do all your DOM work in) jQuery's document ready function
 */
 
-$(document).ready(function(){
+$(document).ready(function() {
   function createTweetElement(tweetData) {
 
     //add escape() to each element that is not being tested elsewhere
@@ -17,11 +17,11 @@ $(document).ready(function(){
     <footer>${tweetData.created_at}</footer>
     </article>`
 
-    return html
+    return html;
   }
 
   function renderTweets(tweets) {
-    console.log('test', 'textarea')
+    // console.log('test', $('textarea'));
     // $('#tweets-container').empty();
     //removes all child nodes of the matched elements from DOM
     $('#tweets-container').empty();
@@ -32,7 +32,7 @@ $(document).ready(function(){
       let tweetData = tweets[tweet];
       let $tweet = createTweetElement(tweetData);
       // takes return value and appends it to the tweets container
-      $('#tweets-container').prepend($tweet)
+      $('#tweets-container').prepend($tweet);
       // RESET FORM
       // let reset = $('textarea:reset')
     }
@@ -48,10 +48,7 @@ $(document).ready(function(){
   // form submit handler
   $('.tweet-form').on('submit', function(event) {
     // console.log('data', data);
-    event.preventDefault()
-
-
-    // $.flash('This message');
+    event.preventDefault();
 
     function validateData(data) {
       // if (text === null || "") {
@@ -63,6 +60,11 @@ $(document).ready(function(){
         alert('please enter a tweet');
         return false;
       }
+      // let noContent = (data === null || data === '')
+      // let tooLong = data.length > 140
+      // if (noContent || tooLong) { ... this should be a ternary ? :
+      //   return false;
+
       return true;
     }
 
@@ -74,17 +76,17 @@ $(document).ready(function(){
         url: '/tweets',
         method: 'POST',
         data: $(this).serialize(),
-        success: function () {
+        success: function() {
           console.log('Success: ');
           loadTweets();
         }
       });
+      $(this).find('textarea').val('');
+      // $(this).find('counter').reset;
     }
   });
 
-
-  // this needs to have a listener ... on.click??
-  function loadTweets() {
+  (function loadTweets() {
     // fetching tweets from the host page
     // do not call the function ... simply pass it to the success param
     $.ajax({
@@ -92,8 +94,24 @@ $(document).ready(function(){
       method: 'GET',
       success: renderTweets
     });
-  }
-  loadTweets();
+  })();
+
+  // loadTweets();
+
+  // (function IIFE(){
+  //   //run this immediately
+  //   console.log(IIFE)
+  // })()
+
+  $('button').click('button', function() {
+    $('.new-tweet').toggle();
+    $('.new-tweet textarea').focus();
+  });
+
+
+
+
+
 
 
 });

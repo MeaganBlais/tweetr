@@ -20,3 +20,24 @@
     font-size: 2em;
     color: #e8fdff;
 }
+
+#nav-bar .compose {
+  border: 2px gray;
+  border-style: solid;
+  border-radius: 7px;
+  padding: 10px;
+  width: 145px;
+  height: 50px;
+  font-size: 19px;
+  margin-top: 15px;
+  margin-right: 75px;
+  color: #32b39f;
+  background-color: #e5f5f3;
+  float: right;
+  input: {display:none};
+}
+
+#nav-bar:hover button {
+  color: black;
+  background-color: #eee;
+  }
