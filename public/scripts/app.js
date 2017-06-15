@@ -68,21 +68,7 @@
 }
 
  //add escape() to each element that is not being tested elsewhere
- function createTweetElement(tweetData) {
 
-   //take a tweet object and return a tweet article
-  let $html = `<article class = "user-tweets">
-      <h1>${tweetData.user.name}</h1>
-      <img src = "${tweetData.user.avatars.small}"/>
-      <h2>${tweetData.user.handle}</h2>
-      <p>${escape(tweetData.content.text)}</p>
-      <footer>${tweetData.created_at}</footer>
-      </article>`
-
-  return $html
- }
-
- var $tweet = createTweetElement(tweetData);
 // createTweetElement(tweetData);
 
 // $(document).ready(function(){
@@ -90,22 +76,51 @@
 // });
 
 $(document).ready(function(){
-function renderTweets(tweets) {
-  // $('#tweets-container').empty(); //removes all child nodes of the matched elements from DOM
-  // loops through tweets
-  for (tweet in tweets) {
-    // calls createTweetElement for each tweet
-    let tweetData = tweets[tweet];
-    let $tweet = createTweetElement(tweetData);
-    // takes return value and appends it to the tweets container
-    $('#tweets-container').append($tweet)
-  }
-}
-renderTweets(data);
-});
+  function createTweetElement(tweetData) {
 
-function escape(str) {
-  var div = document.createElement('div');
-  div.appendChild(document.createTextNode(str));
-  return div.innerHTML;
-}
+    //take a tweet object and return a tweet article
+   let $html = `<article class = "user-tweets">
+       <h1>${tweetData.user.name}</h1>
+       <img src = "${tweetData.user.avatars.small}"/>
+       <h2>${tweetData.user.handle}</h2>
+       <p>${escape(tweetData.content.text)}</p>
+       <footer>${tweetData.created_at}</footer>
+       </article>`
+
+   return $html
+  }
+
+  function renderTweets(tweets) {
+    // $('#tweets-container').empty(); //removes all child nodes of the matched elements from DOM
+    // loops through tweets
+    for (tweet in tweets) {
+      // calls createTweetElement for each tweet
+      let tweetData = tweets[tweet];
+      let $tweet = createTweetElement(tweetData);
+      // takes return value and appends it to the tweets container
+      $('#tweets-container').append($tweet)
+    }
+  }
+  renderTweets(data);
+
+  function escape(str) {
+    var div = document.createElement('div');
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  }
+
+  $('.tweet-form').on('submit', function(event) {
+    console.log('shutest');
+    event.preventDefault()
+
+        console.log('Button clicked, performing ajax call ...', $(this).serialize());
+        $.ajax({
+          url: '/tweets',
+          method: 'POST',
+          data: $(this).serialize(),
+          success: function (morePostsHtml) {
+            console.log('Success: ', morePostsHtml);
+          }
+        });
+      });
+});
