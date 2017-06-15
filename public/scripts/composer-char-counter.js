@@ -25,7 +25,7 @@ function readyFn(jQuery) {
         counter.removeClass('over-char-limit');
       }
 
-      console.log(counter)
+      // console.log(counter)
     });
 }
 
