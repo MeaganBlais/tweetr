@@ -1,69 +1,40 @@
-/*<article class="article">
-  <header>
-    <img src="https://vanillicon.com/788e533873e80d2002fa14e1412b4188_50.png">
-    <h1>Bill Fields</h1>
-    <h2>@MrFields</h2>
-  </header>
-    <p>"test"</p>
-  <footer class="time">
-    10 days
-  </footer>
-</article>*/
-
-
-
 .tweet article {
   border: 2px gray;
   border-style: solid;
   border-radius: 7px;
   margin: 2em;
   position: relative;
+  opacity: 0.5;
 }
 
 .tweet article p {
-    /*opacity: 1; // maybe do this in body for all*/
   margin: 1em;
   position: relative;
 }
 
 .tweet header {
-  /*border: 2px gray;
-  border-style: solid;
-  border-radius: 7px;*/
   display: flex;
-  /*padding: 10px;*/
   background-color: #eee;
   position: relative;
 }
 
-/*.user-tweets img {
-  float: left;
-}*/
-
 .tweet h2 {
   float: right;
-  /*position:absolute;*/
   font-size: 12px;
   padding: 10px;
 }
 
 .tweet h1 {
-  /*position: relative;*/
   font-size: 12px;
+  display: inline;
 }
 
-
-
 .tweet footer {
-  /*margin: 1em;*/
   position: relative;
   font-size: 12px;
-  /*width: 282px;*/
   border-top-width: 1px;
   border-top-color: #D3D3D3;
   border-top-style: solid;
-
-
 }
 
 .tweet footer.time {
@@ -76,11 +47,18 @@
   border-top-style: solid;
   position: relative;
   padding-top: 2px;
-
-
 }
 
+.icons  {
+  opacity: 0;
+  float: right;
+  position: relative;
+}
+
+.tweet:hover .icons {
+  opacity: 1.0;
+}
 
 .tweet:hover article {
-  opacity: 0.5;
+  opacity: 1.0;
 }
