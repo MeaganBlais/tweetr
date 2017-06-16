@@ -86,7 +86,7 @@ $(document).ready(function() {
     }
   });
 
-  (function loadTweets() {
+  function loadTweets() {
     // fetching tweets from the host page
     // do not call the function ... simply pass it to the success param
     $.ajax({
@@ -94,9 +94,9 @@ $(document).ready(function() {
       method: 'GET',
       success: renderTweets
     });
-  })();
+  };
 
-  // loadTweets();
+  loadTweets();
 
   // (function IIFE(){
   //   //run this immediately
