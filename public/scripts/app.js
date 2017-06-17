@@ -75,7 +75,7 @@ $(document).ready(function() {
         }
       });
       $(this).find('textarea').val('');
-      // $(this).find('counter').reset;
+      $(this).find('.counter').html(140);
     }
   });
 
