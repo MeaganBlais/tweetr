@@ -19,3 +19,9 @@ This repository is the starter code for the project: Students will fork and clon
 - chance
 - md5
 - mongo
+
+## Screenshots
+
+!['screenshot of main page'](https://github.com/MeaganBlais/tweetr/blob/master/docs/1-mainPage.png?raw=true)
+!['screenshot of compose button selected'](https://github.com/MeaganBlais/tweetr/blob/master/docs/2-composeSelected.png?raw=true)
+!['screenshot of tweets selected'](https://github.com/MeaganBlais/tweetr/blob/master/docs/3-tweetsSelected.png?raw=true)
