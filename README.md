@@ -6,8 +6,9 @@ This repository includes the starter code for a project designed to allow studen
 
 ## Getting Started
 
-1. Install dependencies using the `npm install` command.
-2. Start the web server using the `npm run local` command. The app will be served at <http://localhost:8080/>.
+1. Install dependencies from the command line using `npm install`
+2. Start the web server from the command line using `npm run local`
+3. Open <http://localhost:8080/> in a web browser
 3. Go to <http://localhost:8080/> in your browser.
 
 ## Dependencies
@@ -21,6 +22,4 @@ This repository includes the starter code for a project designed to allow studen
 
 ## Screenshots
 
-!['screenshot of main page'](https://github.com/MeaganBlais/tweetr/blob/master/docs/1-mainPage.png?raw=true)
-!['screenshot of compose button selected'](https://github.com/MeaganBlais/tweetr/blob/master/docs/2-composeSelected.png?raw=true)
-!['screenshot of tweets selected'](https://github.com/MeaganBlais/tweetr/blob/master/docs/3-tweetsSelected.png?raw=true)
+!['screenshot of main page'](https://github.com/MeaganBlais/tweetr/blob/master/docs/Tweeter-MainPage.png?raw=true)
