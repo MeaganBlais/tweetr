@@ -8,24 +8,31 @@
 }
 
 .tweet article p {
-  margin: 1em;
+  margin: 0.5em;
   position: relative;
 }
 
 .tweet header {
-  display: flex;
   background-color: #eee;
   position: relative;
+  border-bottom-width: 1px;
+  border-bottom-color: #D3D3D3;
+  border-bottom-style: solid;
+}
+
+.tweet img {
+  vertical-align: bottom;
+
 }
 
 .tweet h2 {
   float: right;
-  font-size: 12px;
-  padding: 10px;
+  font-size: 14px;
+  padding-top: 22px;
 }
 
 .tweet h1 {
-  font-size: 12px;
+  font-size: 25px;
   display: inline;
 }
 
@@ -53,6 +60,18 @@
   opacity: 0;
   float: right;
   position: relative;
+}
+
+.icons .fa-heart:hover {
+  color: red;
+}
+
+.icons .fa-retweet:hover {
+  color: green;
+}
+
+.icons .fa-flag:hover {
+  color: black;
 }
 
 .tweet:hover .icons {

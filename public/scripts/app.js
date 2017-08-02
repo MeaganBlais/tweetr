@@ -7,12 +7,13 @@
 $(document).ready(function() {
   function createTweetElement(tweetData) {
 
-    //add escape() to each element that needs to be tested
     //take a tweet object and return a tweet article
     let html = `<article class = "user-tweets">
-    <img src = "${tweetData.user.avatars.small}"/>
-    <h1>${tweetData.user.name}</h1>
-    <h2>${tweetData.user.handle}</h2>
+    <header>
+      <img src = "${tweetData.user.avatars.small}"/>
+      <h1>${tweetData.user.name}</h1>
+      <h2>${tweetData.user.handle}</h2>
+    </header>
     <p>${escape(tweetData.content.text)}</p>
 
     <footer class="tweet-foot">
@@ -40,6 +41,7 @@ $(document).ready(function() {
     }
   }
 
+  //add escape() to each element that needs to be tested
   function escape(str) {
     var div = document.createElement('div');
     div.appendChild(document.createTextNode(str));
@@ -95,6 +97,7 @@ $(document).ready(function() {
     $('.new-tweet textarea').focus();
   });
 
+//function to record time since tweet sent
   function timeDiff(now, posted) {
     let msPerMin = 60 * 1000;
     let msPerHr = msPerMin * 60;
